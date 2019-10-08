@@ -39,6 +39,17 @@ then you can find this icon
 ![](pic/s5.png)
 
 
+### Install
+
+1. Marketplace
+
+IDEA or Android Studio `Settings/Plugins/Marketplace` search `EventBus-Navigator`
+
+2. download [EventBus-Navigator.jar](https://github.com/Vove7/EventBus-Navigator/blob/master/EventBus-Navigator.jar) file.
+
+`Settings/Plugins/` Install Plugin from Disk.
+
+
 ## Warning
 
 Not support navigate from that java or kotlin post primitive type to kotlin receiver function, but java receiver is ok.

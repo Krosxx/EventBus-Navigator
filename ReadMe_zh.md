@@ -38,6 +38,16 @@ Receiver function what is annotate with `@Subscribe`
 
 ![](pic/s5.png)
 
+### 安装
+
+1. Marketplace
+
+IDEA or Android Studio `Settings/Plugins/Marketplace` search `EventBus-Navigator`
+
+2. 下载 [EventBus-Navigator.jar](https://github.com/Vove7/EventBus-Navigator/blob/master/EventBus-Navigator.jar) .
+
+`Settings/Plugins/` Install Plugin from Disk.
+
 
 ## Warning
 
