@@ -1,0 +1,52 @@
+<idea-plugin>
+
+    <id>cn.vove7.ide.plugin.eventbus_navigator</id>
+    <name>EventBus-Navigator</name>
+    <vendor email="vove7@qq.com" url="http://www.github.com/Vove7/EventBus-Navigator">Vove7</vendor>
+    <version>1.0</version>
+
+    <description><![CDATA[
+     EventBus Navigator
+    ]]></description>
+
+    <change-notes><![CDATA[
+- Kotlin language support
+- support encapsulated `post` function
+- 支持Kotlin语言
+- 支持封装的YourBus.post函数
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="172"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <codeInsight.lineMarkerProvider
+            language="JAVA"
+            implementationClass="cn.vove7.eventbus_nav.lineprovider.EventBus3LineMarkerProvider"/>
+        <codeInsight.lineMarkerProvider
+            language="kotlin"
+            implementationClass="cn.vove7.eventbus_nav.lineprovider.EventBus3LineMarkerProvider"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="cn.vove7.eventbus_nav.action.MarkPosterAction" class="cn.vove7.eventbus_nav.action.MarkPosterAction"
+            text="Mark as Poster Method" description="Mark as poster Method" icon="/icons/add.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+        </action>
+        <action id="cn.vove7.eventbus_nav.action.UnMarkPosterAction" class="cn.vove7.eventbus_nav.action.UnMarkPosterAction"
+            text="Unmark as Poster Method" description="Unmark as poster method" icon="/icons/remove.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+        </action>
+    </actions>
+    <depends>org.jetbrains.kotlin</depends>
+
+</idea-plugin>
