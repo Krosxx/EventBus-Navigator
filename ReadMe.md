@@ -60,4 +60,4 @@ primitive type :
 ## Thanks
 
 - [likfe/eventbus3-intellij-plugin](https://github.com/likfe/eventbus3-intellij-plugin)
-- [kgmyshin/eventbus3-i
+- [kgmyshin/eventbus3-intellij-plugin](https://github.com/kgmyshin/eventbus3-intellij-plugin)
