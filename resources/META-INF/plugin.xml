@@ -3,14 +3,14 @@
     <id>cn.vove7.ide.plugin.eventbus_navigator</id>
     <name>EventBus-Navigator</name>
     <vendor email="vove7@qq.com" url="http://www.github.com/Vove7/EventBus-Navigator">Vove7</vendor>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <description><![CDATA[
     <article class="markdown-body entry-content p-5" itemprop="text"><h1><a id="user-content-eventbus-navigator" class="anchor" aria-hidden="true" href="#eventbus-navigator"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EventBus-Navigator</h1>
 <blockquote>
 <p>A plugin for IDEA and Android Studio.</p>
 </blockquote>
-<p><a href="/Vove7/EventBus-Navigator/blob/master/ReadMe_zh.md">中文介绍</a></p>
+<p><a href="http://www.github.com/Vove7/EventBus-Navigator/blob/master/ReadMe_zh.md">中文介绍</a></p>
 <ul>
 <li><strong>Kotlin</strong> language support</li>
 <li>support encapsulated <code>post</code> function</li>
@@ -19,18 +19,18 @@
 <h2><a id="user-content-preview" class="anchor" aria-hidden="true" href="#preview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preview</h2>
 <p>Receiver function what is annotate with <code>@Subscribe</code></p>
 <h3><a id="user-content-kotlin-subscriber-function" class="anchor" aria-hidden="true" href="#kotlin-subscriber-function"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotlin subscriber function</h3>
-<p><a target="_blank" rel="noopener noreferrer" href="/Vove7/EventBus-Navigator/blob/master/pic/s1.png"><img src="/Vove7/EventBus-Navigator/raw/master/pic/s1.png" alt="" style="max-width:100%;"></a></p>
+<p><img src="http://www.github.com/Vove7/EventBus-Navigator/raw/master/pic/s1.png?raw=true" alt="" style="max-width:100%;"></p>
 <h3><a id="user-content-kotlin-publisher-expression" class="anchor" aria-hidden="true" href="#kotlin-publisher-expression"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotlin publisher expression</h3>
-<p><a target="_blank" rel="noopener noreferrer" href="/Vove7/EventBus-Navigator/blob/master/pic/s3.png"><img src="/Vove7/EventBus-Navigator/raw/master/pic/s3.png" alt="" style="max-width:100%;"></a></p>
+<p><img src="http://www.github.com/Vove7/EventBus-Navigator/raw/master/pic/s3.png?raw=true" alt="" style="max-width:100%;"></p>
 <h3><a id="user-content-java-subscriber-function" class="anchor" aria-hidden="true" href="#java-subscriber-function"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Java subscriber function</h3>
-<p><a target="_blank" rel="noopener noreferrer" href="/Vove7/EventBus-Navigator/blob/master/pic/s6.png"><img src="/Vove7/EventBus-Navigator/raw/master/pic/s6.png" alt="" style="max-width:100%;"></a></p>
+<p><img src="http://www.github.com/Vove7/EventBus-Navigator/raw/master/pic/s6.png?raw=true" alt="" style="max-width:100%;"></p>
 <h3><a id="user-content-java-publisher-expression" class="anchor" aria-hidden="true" href="#java-publisher-expression"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Java publisher expression</h3>
 <p>...</p>
 <h2><a id="user-content-make-a-encapsulated-post-function-as-a-poster-function" class="anchor" aria-hidden="true" href="#make-a-encapsulated-post-function-as-a-poster-function"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Make a encapsulated post function as a poster function</h2>
 <p>Right click at a function name.</p>
-<p><a target="_blank" rel="noopener noreferrer" href="/Vove7/EventBus-Navigator/blob/master/pic/s4.png"><img src="/Vove7/EventBus-Navigator/raw/master/pic/s4.png" alt="" style="max-width:100%;"></a></p>
+<p><img src="http://www.github.com/Vove7/EventBus-Navigator/raw/master/pic/s4.png?raw=true" alt="" style="max-width:100%;"></p>
 <p>then you can find this icon</p>
-<p><a target="_blank" rel="noopener noreferrer" href="/Vove7/EventBus-Navigator/blob/master/pic/s5.png"><img src="/Vove7/EventBus-Navigator/raw/master/pic/s5.png" alt="" style="max-width:100%;"></a></p>
+<p><img src="http://www.github.com/Vove7/EventBus-Navigator/raw/master/pic/s5.png?raw=true" alt="" style="max-width:100%;"></p>
 <h2><a id="user-content-warning" class="anchor" aria-hidden="true" href="#warning"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Warning</h2>
 <p>Not support navigate from that java or kotlin post primitive type to kotlin receiver function, but java receiver is ok.</p>
 <p>primitive type :</p>
