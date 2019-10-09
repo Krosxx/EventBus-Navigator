@@ -11,7 +11,8 @@ class ReceiverFilter : Filter {
     override fun shouldShow(usage: Usage): Boolean {
         val element = (usage as UsageInfo2UsageAdapter).element
         if (element is PsiJavaCodeReferenceElement) {
-            return PsiUtils.isEventBusReceiver(element.context?.context?.context?.context!!)
+            val method = element.context?.context?.context?.context ?: return false
+            return PsiUtils.isEventBusReceiver(method)
         }
         if (element is KtNameReferenceExpression) {
             return PsiUtils.isEventBusReceiver(element.parent.parent.parent.parent.parent)
