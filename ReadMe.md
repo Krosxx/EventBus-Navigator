@@ -5,7 +5,8 @@
 [中文介绍](ReadMe_zh.md)
 
 - **Kotlin** language support
-- support encapsulated `post` function
+- Support encapsulated `post` function
+- Support primitive type
 - based on [likfe/eventbus3-intellij-plugin](https://github.com/likfe/eventbus3-intellij-plugin)
 
 ## Preview
@@ -49,24 +50,6 @@ IDEA or Android Studio `Settings/Plugins/Marketplace` search `EventBus-Navigator
 
 `Settings/Plugins/` Install Plugin from Disk.
 
-
-## Warning
-
-Not support navigate from that java or kotlin post primitive type to kotlin receiver function, but java receiver is ok.
-  
-primitive type :
-
-```
-"kotlin.Int" to "java.lang.Integer",
-"kotlin.Boolean" to "java.lang.Boolean",
-"kotlin.Char" to "java.lang.Character",
-"kotlin.Double" to "java.lang.Double",
-"kotlin.Float" to "java.lang.Float",
-"kotlin.Long" to "java.lang.Long",
-"kotlin.Any" to "java.lang.Object",
-"kotlin.String" to "java.lang.String"
-```
-  
 
 ## Thanks
 

@@ -93,7 +93,7 @@ class EventBus3LineMarkerProvider : LineMarkerProvider {
                 ?: return@forEach
             findEleUsageList.add(myPostMethod)
         }
-        ShowUsagesAction(PosterFilter(paramType)).startFindUsages(findEleUsageList.toTypedArray(), RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES)
+        ShowUsagesAction(PosterFilter(paramType), ShowUsagesAction.TYPE_POST).startFindUsages(findEleUsageList.toTypedArray(), RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES)
     }
 
     /**
@@ -101,13 +101,17 @@ class EventBus3LineMarkerProvider : LineMarkerProvider {
      * 根据类型 搜索引用，过滤函数
      */
     private fun showReceivers(e: MouseEvent, psiElement: PsiElement) {
+        val global = GlobalSearchScope.allScope(psiElement.project)
+        val javaPsiFacade = JavaPsiFacade.getInstance(psiElement.project)
+        val subscribeCls = javaPsiFacade.findClass("org.greenrobot.eventbus.Subscribe", global)
+            ?: return
         //Java 函数调用
         if (psiElement is PsiMethodCallExpression) {
             val expressionTypes = psiElement.argumentList.expressionTypes
             if (expressionTypes.isNotEmpty()) {
-                val eventClass = PsiUtils.getClass(expressionTypes[0], psiElement)
-                if (eventClass != null) {
-                    ShowUsagesAction(ReceiverFilter()).startFindUsages(eventClass, RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES)
+                val eventClass = PsiUtils.getClass(expressionTypes[0], psiElement) ?: return
+                eventClass.qualifiedName?.also {
+                    ShowUsagesAction(ReceiverFilter(it), ShowUsagesAction.TYPE_RECEIVER).startFindUsages(subscribeCls, RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES)
                     return
                 }
             }
@@ -115,26 +119,16 @@ class EventBus3LineMarkerProvider : LineMarkerProvider {
         //Kotlin 函数调用
         if (psiElement is KtReferenceExpression) {
             val argList = psiElement.nextSibling as KtValueArgumentList
-
             val type = argList.arguments[0].getArgumentExpression()?.resolveType() as KotlinType
-
-            val global = GlobalSearchScope.allScope(psiElement.project)
             val ktType = KotlinPsiUtil.getTypeWithoutTypeParameters(type)
-
-            val javaPsiFacade = JavaPsiFacade.getInstance(psiElement.project)
-
-            //todo kt 基础 类型引用
             val clsType = ktType.toJavaType()
-            val javaTypeCls = javaPsiFacade.findClass(clsType, global)
-            if (javaTypeCls != null) {
-                ShowUsagesAction(ReceiverFilter()).startFindUsages(javaTypeCls,
-                        RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES)
-            }
+            ShowUsagesAction(ReceiverFilter(clsType), ShowUsagesAction.TYPE_RECEIVER).startFindUsages(subscribeCls,
+                    RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES)
         }
     }
 
     private fun showReferences(e: MouseEvent, psiElement: PsiElement) {
-        ShowUsagesAction(Filter { true }).startFindUsages(psiElement,
+        ShowUsagesAction(Filter { true }, -1).startFindUsages(psiElement,
                 RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES)
         AllIcons.General.Remove
 

@@ -67,6 +67,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiJavaCodeReferenceElement;
+import com.intellij.psi.PsiMethod;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.ProjectScope;
 import com.intellij.psi.search.PsiElementProcessor;
@@ -80,6 +82,7 @@ import com.intellij.ui.TableScrollingUtil;
 import com.intellij.ui.TableUtil;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.ui.popup.AbstractPopup;
+import com.intellij.usageView.UsageInfo;
 import com.intellij.usageView.UsageViewBundle;
 import com.intellij.usages.PsiElementUsageTarget;
 import com.intellij.usages.Usage;
@@ -110,6 +113,8 @@ import com.intellij.util.ui.ListTableModel;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.kotlin.psi.KtNameReferenceExpression;
+import org.jetbrains.kotlin.psi.KtNamedFunction;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -148,6 +153,11 @@ public class ShowUsagesAction extends AnAction implements PopupAction {
     private static final int USAGES_PAGE_SIZE = 100;
 
     private Filter filter;
+    //0 search receiver; 1 search post
+    private int type;
+
+    public static final int TYPE_RECEIVER = 0;
+    public static final int TYPE_POST = 1;
 
     public final static NullUsage MORE_USAGES_SEPARATOR = NullUsage.INSTANCE;
     private static final UsageNode MORE_USAGES_SEPARATOR_NODE = UsageViewImpl.NULL_NODE;
@@ -193,8 +203,9 @@ public class ShowUsagesAction extends AnAction implements PopupAction {
         myUsageViewSettings.GROUP_BY_SCOPE = false;
     }
 
-    public ShowUsagesAction(Filter filter) {
+    public ShowUsagesAction(Filter filter, int type) {
         this.filter = filter;
+        this.type = type;
         setInjectedContext(true);
 
         final UsageViewSettings usageViewSettings = UsageViewSettings.getInstance();
@@ -465,8 +476,22 @@ public class ShowUsagesAction extends AnAction implements PopupAction {
         Disposer.register(popup, indicator::cancel);
     }
 
-    protected @Nullable
-    Usage transform(@NotNull Usage usage) {
+    /**
+     * 转换usage 显示行
+     * 当使用@Subscribe 进行搜索时，显示列不是函数所在行，需要转换至函数Usage
+     */
+    @SuppressWarnings("ConstantConditions")
+    private Usage transform(@NotNull Usage usage) {
+        if (type == TYPE_RECEIVER) {
+            PsiElement ele = ((UsageInfo2UsageAdapter) usage).getElement();
+            if (ele instanceof PsiJavaCodeReferenceElement) {
+                PsiElement method = ((PsiMethod) ele.getContext().getContext().getContext()).getIdentifyingElement();
+                return new UsageInfo2UsageAdapter(new UsageInfo(method));
+            } else if (ele instanceof KtNameReferenceExpression) {
+                PsiElement method = ((KtNamedFunction) ele.getParent().getParent().getParent().getParent().getParent().getParent()).getNameIdentifier();
+                return new UsageInfo2UsageAdapter(new UsageInfo(method));
+            }
+        }
         return usage;
     }
 

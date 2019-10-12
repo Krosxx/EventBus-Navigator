@@ -4,6 +4,7 @@
 
 - 支持Kotlin语言
 - 支持封装的YourBus.post函数
+- 支持基础类型
 - 修改于 [likfe/eventbus3-intellij-plugin](https://github.com/likfe/eventbus3-intellij-plugin)
 
 ![](/pic/s1.png)
@@ -48,23 +49,6 @@ IDEA or Android Studio `Settings/Plugins/Marketplace` search `EventBus-Navigator
 
 `Settings/Plugins/` Install Plugin from Disk.
 
-
-## Warning
-
-  目前（可能以后也）不支持java/kotlin post 基础类型 函数导航到kotlin接收函数，但Java可以。
-  
-基础类型包括:
-
-```
-"kotlin.Int" to "java.lang.Integer",
-"kotlin.Boolean" to "java.lang.Boolean",
-"kotlin.Char" to "java.lang.Character",
-"kotlin.Double" to "java.lang.Double",
-"kotlin.Float" to "java.lang.Float",
-"kotlin.Long" to "java.lang.Long",
-"kotlin.Any" to "java.lang.Object",
-"kotlin.String" to "java.lang.String"
-```
 
 ## Thanks
 
