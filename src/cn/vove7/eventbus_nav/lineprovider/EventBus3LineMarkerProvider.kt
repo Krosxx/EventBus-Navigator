@@ -133,4 +133,8 @@ class EventBus3LineMarkerProvider : LineMarkerProvider {
         AllIcons.General.Remove
 
     }
+
+    override fun collectSlowLineMarkers(elements: MutableList<PsiElement>, result: MutableCollection<LineMarkerInfo<PsiElement>>) {
+
+    }
 }
